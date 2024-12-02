@@ -31,7 +31,7 @@ Use Webpack to configure the build of HTML, SCSS, and JS for each separate page.
 │   │   ├── _main.scss
 │   │   ├── _mixins.scss
 │   │   └── _variables.scss
-│   └── global.scss
+│   └── global.scss // Import all styles
 ├── pages    // Defining entry-point components for pages.
 │   ├── page1
 │   │   ├── components    // Define components of the page
