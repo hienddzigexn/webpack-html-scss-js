@@ -28,7 +28,9 @@ Use Webpack to configure the build of HTML, SCSS, and JS for each separate page.
 ├── global-styles    // Defined global styles used for all pages
 │   ├── partials
 │   │   ├── _index.scss
-│   │   └── _main.scss
+│   │   ├── _main.scss
+│   │   ├── _mixins.scss
+│   │   └── _variables.scss
 │   └── global.scss
 ├── pages    // Defining entry-point components for pages.
 │   ├── page1
@@ -62,6 +64,7 @@ Use Webpack to configure the build of HTML, SCSS, and JS for each separate page.
 │   │   └── footer.module.js
 │   ├── header
 │   └── component-styles.scss    // Import all styles
+└── test    // unit, intergration test
 └── utils    // Utilities for universal logic that is not related to business logic or any technologies, e.g. string manipulations, mathematic calculations, etc.
     └── validate.js
 ```
