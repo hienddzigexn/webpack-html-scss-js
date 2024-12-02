@@ -1,21 +1,38 @@
-### webpack-html-scss-js
-============================
+# Webpack config for html, scss, js
 
-### SRC Folder Structure
+## Overview
+Use Webpack to configure the build of HTML, SCSS, and JS for each separate page.
+
+
+## A typical top-level directory layout
+```
+.
+├── config    // Contains config files (exp: webpack.config)
+├── dist    // Contains Compiled files
+│   ├── scripts
+│   │   ├── home.js
+│   │   └── document.js
+│   └── styles
+│   │   ├── home.css
+│   │   └── document.css
+└── src    // Source files
+```
+
+## Source folder
 
 ```
 .
-├── constants  // Contains images, logos,...
+├── constants    // Constant, unchanged values (e.g. export const MINUTES_PER_HOUR = 60)
 │   ├── index.js
 │   └── document.js
-├── global-styles
+├── global-styles    // Defined global styles used for all pages
 │   ├── partials
 │   │   ├── _index.scss
 │   │   └── _main.scss
 │   └── global.scss
-├── pages
+├── pages    // Defining entry-point components for pages.
 │   ├── page1
-│   │   ├── components
+│   │   ├── components    // Define components of the page
 │   │   │   ├── table
 │   │   │   │   ├── styles
 │   │   │   │   │   ├── _index.scss
@@ -23,20 +40,20 @@
 │   │   │   │   ├── table.component.js
 │   │   │   │   └── table.module.js
 │   │   │   └── component-styles.scss
-│   │   ├── styles
+│   │   ├── styles    // Define styles of the page
 │   │   │   ├── _index.scss
 │   │   │   ├── _main.scss
 │   │   │   └── _responsive.scss
-│   │   ├── page1.module.js
-│   │   ├── page1.page.js
-│   │   └── page1.page.scss
+│   │   ├── page1.module.js    // This is a root page file which initials of the page
+│   │   ├── page1.page.js    // Define init, bindEvent, ... handle logic of the page
+│   │   └── page1.page.scss    // Import all page styles.
 │   ├── page2
 │   └── ...n
-├── services
-│   ├── base.service.js
-│   ├── contact.service.js
+├── services    // Define for logic that communicates with the server(s).
+│   ├── base.service.js    // Basic API
+│   ├── contact.service.js    // Define all API used for Contact which extends from base.service 
 │   └── document.service.js
-├── shared
+├── shared    // Share common components for all pages
 │   ├── footer
 │   │   ├── styles
 │   │   │   ├── _index.scss
@@ -44,7 +61,7 @@
 │   │   ├── footer.component.js
 │   │   └── footer.module.js
 │   ├── header
-│   └── component-styles.scss
-└── utils
+│   └── component-styles.scss    // Import all styles
+└── utils    // Utilities for universal logic that is not related to business logic or any technologies, e.g. string manipulations, mathematic calculations, etc.
     └── validate.js
 ```
